@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 29.02.2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME:  DEVESH SHARMA S
+###  ROLL NO : 212222110008
+###  DEPARTMENT:  CSE-IOT
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -77,11 +77,38 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
+#include"stdbool.h"
+bool IRSENSOR;
+void irpair();
+ while (1)
+  {
+	  irpair();
+  }
 
+void irpair()
+{
+	IRSENSOR=HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_4);
+	if(IRSENSOR==0)
+	{
+		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,RESET);
+		HAL_Delay(1000);
+		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,SET);
+		HAL_Delay(1000);
+	}
+	else{
+		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,RESET);
+		HAL_Delay(1000);
+	}
+}
+```
 
 
 ## Output  :
- 
+![WhatsApp Image 2024-02-29 at 21 42 59_3c19eaa2](https://github.com/devesh-s1/EXPERIMENT--02-INTERFACEING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-/assets/121490523/41d93ca3-8e29-4c0a-9bc0-37f8b74fd553)
+![WhatsApp Image 2024-02-29 at 21 43 01_91c425a0](https://github.com/devesh-s1/EXPERIMENT--02-INTERFACEING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-/assets/121490523/51587d8a-f35d-4285-b1ba-05c27aa33203)
+
  
  
  
